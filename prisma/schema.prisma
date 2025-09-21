@@ -1,0 +1,87 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+enum Game {
+  Arma3
+  ArmaReforger
+}
+
+enum EventType {
+  PvE
+  PvP
+  PvPvE
+}
+
+enum ModType {
+  Vanilla
+  Modded
+}
+
+enum ServerRegion {
+  EU
+  NA
+  Other
+}
+
+model User {
+  id        String    @id @default(cuid())
+  username  String    @unique
+  password  String
+  sessions  Session[]
+  events    Event[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+model Session {
+  id         String   @id @default(cuid())
+  user       User     @relation(fields: [userId], references: [id])
+  userId     String
+  userAgent  String?
+  createdAt  DateTime @default(now())
+  expiresAt  DateTime
+  lastActive DateTime @updatedAt
+}
+
+model Event {
+  id              String       @id @default(cuid())
+  title           String
+  game            Game
+  startTimeUtc    DateTime
+  summary         String
+  longDescription String
+  serverMap       String
+  imageUrl        String
+  tags            Tag[]
+  type            EventType
+  durationMinutes Int
+  modSizeMb       Int
+  modType         ModType
+  serverName      String
+  serverPassword  String?
+  serverRegion    ServerRegion
+  createdAt       DateTime     @default(now())
+  updatedAt       DateTime     @updatedAt
+  user            User         @relation(fields: [userId], references: [id])
+  userId          String
+}
+
+model Tag {
+  id      String @id @default(cuid())
+  name    String @unique
+  event   Event  @relation(fields: [eventId], references: [id])
+  eventId String
+}
+
+model Attachment {
+  id          String @id @default(cuid())
+  bucket      String
+  key         String
+  contentType String
+}
