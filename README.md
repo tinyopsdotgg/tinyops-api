@@ -1,4 +1,4 @@
-# TinyOps API
+# Tiny Ops API
 
 A REST API for managing Arma gaming events and community interactions, built with Hono, Prisma, and TypeScript.
 
@@ -22,7 +22,7 @@ A REST API for managing Arma gaming events and community interactions, built wit
     - Use this command: `$ [Convert]::ToBase64String((1..32|%{Get-Random -Maximum 256}))` to create a SESSION_SECRET env var, if you are using **PowerShell**
 
     ```sh
-    DATABASE_URL="mysql://root:password@localhost:3306/armasocial"
+    DATABASE_URL="mysql://root:password@localhost:3306/tinyops"
     SESSION_SECRET="place_here"
     NODE_ENV="development"
     PORT=3000

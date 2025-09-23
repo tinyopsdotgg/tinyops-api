@@ -2,7 +2,7 @@ import { Hono } from 'hono'
 
 import db from '../db/db.js'
 import { logger } from '../logger/logger.js'
-import { AppError } from '../utils/errorHandler.js'
+import { AppError } from '../utils/error-handler.js'
 
 const healthRoute = new Hono().basePath('health')
 

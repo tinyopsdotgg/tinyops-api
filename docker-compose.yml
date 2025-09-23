@@ -1,17 +1,17 @@
 services:
     mysql:
         image: mysql:8.0
-        container_name: armasocial-mysql
+        container_name: tinyops-mysql
         restart: unless-stopped
         ports:
             - '3306:3306'
         environment:
             MYSQL_ROOT_PASSWORD: password
-            MYSQL_DATABASE: arma_social
+            MYSQL_DATABASE: tinyops
 
     minio:
         image: minio/minio
-        container_name: armasocial-minio
+        container_name: tinyops-minio
         command: server /data --console-address ":9001"
         ports:
             - '9000:9000' # S3 API

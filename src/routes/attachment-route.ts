@@ -3,7 +3,7 @@ import { Hono } from 'hono'
 
 import db from '../db/db.js'
 import { s3 } from '../db/s3.js'
-import { AppError } from '../utils/errorHandler.js'
+import { AppError } from '../utils/error-handler.js'
 import { HTTP_STATUS } from '../utils/http-status.enum.js'
 
 // Helper to get allowed file types as array

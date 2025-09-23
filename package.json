@@ -1,5 +1,5 @@
 {
-	"name": "armasocial.io-api",
+	"name": "tinyops-api",
 	"type": "module",
 	"scripts": {
 		"dev": "tsx watch src/main.ts",

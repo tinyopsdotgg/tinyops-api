@@ -1,7 +1,7 @@
 import { createMiddleware } from 'hono/factory'
 
 import db from '../db/db.js'
-import { AppError } from '../utils/errorHandler.js'
+import { AppError } from '../utils/error-handler.js'
 import { HTTP_STATUS } from '../utils/http-status.enum.js'
 
 import type { User } from '@prisma/client'

@@ -11,7 +11,7 @@ import authRoute from './routes/auth-route.js'
 import eventRoute from './routes/event-route.js'
 import healthRoute from './routes/health-route.js'
 import userRoute from './routes/user-route.js'
-import { errorHandler } from './utils/errorHandler.js'
+import { errorHandler } from './utils/error-handler.js'
 
 const app = new Hono()
 

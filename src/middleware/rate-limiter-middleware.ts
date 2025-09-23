@@ -1,6 +1,6 @@
 import { type Context, type Next } from 'hono'
 
-import { AppError } from '../utils/errorHandler.js'
+import { AppError } from '../utils/error-handler.js'
 
 // Simple in-memory rate limiter
 const rateLimiter = new Map<string, { count: number; resetTime: number }>()
