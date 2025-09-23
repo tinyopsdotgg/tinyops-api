@@ -8,7 +8,10 @@
 		"lint:fix": "eslint . --ext .ts --fix",
 		"format": "prettier --write .",
 		"format:check": "prettier --check .",
-		"postinstall": "prisma generate"
+		"migrate:dev": "prisma migrate dev",
+		"migrate:deploy": "prisma migrate deploy",
+		"prisma:generate": "prisma generate",
+		"postinstall": "prisma generate && if [ \"$NODE_ENV\" = \"production\" ]; then prisma migrate deploy; fi"
 	},
 	"dependencies": {
 		"@aws-sdk/client-s3": "^3.826.0",

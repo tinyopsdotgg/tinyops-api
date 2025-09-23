@@ -59,10 +59,10 @@ serve(
 		console.log(`📊 Environment: ${process.env.NODE_ENV || 'development'}`)
 		console.log(`\n📋 Health Endpoints:`)
 		console.log(
-			`  🏥 Health check:     http://localhost:${info.port}/api/health`
+			`🏥 Health check:     http://localhost:${info.port}/api/health`
 		)
 		console.log(
-			`  🏥 Health check:     http://localhost:${info.port}/api/health/detailed`
+			`🏥 Health check:     http://localhost:${info.port}/api/health/detailed`
 		)
 	}
 )
