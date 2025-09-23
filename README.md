@@ -1,16 +1,8 @@
-# Arma Social API
+# TinyOps API
 
 A REST API for managing Arma gaming events and community interactions, built with Hono, Prisma, and TypeScript.
 
-## Features
-
-- 🔐 Authentication & Authorization
-- 📅 Event Management
-- 📎 File Uploads (S3-compatible storage)
-- 🛡️ Rate Limiting
-- ⚡ TypeScript with Zod validation
-
-## Installation
+## Developer Setup
 
 1. Clone the repo
 
