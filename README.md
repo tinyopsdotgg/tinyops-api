@@ -7,7 +7,7 @@ A REST API for managing Arma gaming events and community interactions, built wit
 1. Clone the repo
 
     ```sh
-    $ git clone https://github.com/jessedelira/armasocial.io-api.git
+    $ git clone https://github.com/tinyopsdotgg/tinyops-api
     ```
 
 2. Create database container
@@ -50,12 +50,3 @@ A REST API for managing Arma gaming events and community interactions, built wit
 6. Finally, run `$ npm run dev` to start the server
 
 The API will be available at `http://localhost:3000`
-
-## Developer Scripts
-
-- `npm run dev` - Start development server with hot reload
-- `npm run build` - Build for production
-- `npm run lint` - Run ESLint
-- `npm run format` - Format code with Prettier
-- `npx prisma migrate dev` - Run database migrations
-- `npx prisma studio` - Open database GUI
