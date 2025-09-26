@@ -26,7 +26,7 @@ eventRoute.get('/all', async (c) => {
 			}
 		})
 
-		return c.json({ events: allEvents })
+		return c.json(allEvents)
 	} catch {
 		throw new AppError('Failed to fetch events', 500)
 	}
