@@ -9,15 +9,20 @@ export class AppError extends Error {
 
 	constructor(
 		message: string,
-		statusCode: number = HTTP_STATUS.INTERNAL_SERVER_ERROR
+		statusCode: number = HTTP_STATUS.INTERNAL_SERVER_ERROR,
+		cause?: unknown
 	) {
 		super(message)
 		this.statusCode = statusCode
+		this.cause = cause
 	}
 }
 
 export function errorHandler(error: Error, c: Context) {
-	console.error('Error:', error.message)
+	console.error('[Error]:', {
+		message: error.message,
+		cause: error.cause
+	})
 
 	// Validation errors
 	if (error instanceof ZodError) {
@@ -30,14 +35,6 @@ export function errorHandler(error: Error, c: Context) {
 	// HTTP exceptions
 	if (error instanceof HTTPException) {
 		return c.json({ error: error.message }, error.status)
-	}
-
-	// Custom app errors
-	if (error instanceof AppError) {
-		return c.json(
-			{ error: error.message },
-			error.statusCode as 400 | 401 | 403 | 404 | 500
-		)
 	}
 
 	// Everything else

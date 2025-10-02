@@ -5,7 +5,7 @@ import { AppError } from '../utils/error-handler.js'
 // Simple in-memory rate limiter
 const rateLimiter = new Map<string, { count: number; resetTime: number }>()
 
-export const rateLimiterMiddleware = async (c: Context, next: Next) => {
+export async function rateLimiterMiddleware(c: Context, next: Next) {
 	const ip =
 		c.req.header('x-forwarded-for') ||
 		c.req.header('x-real-ip') ||

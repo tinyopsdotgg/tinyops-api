@@ -1,5 +1,18 @@
 import { PrismaClient } from '@prisma/client'
 
-const db = new PrismaClient()
+declare global {
+	// prevent multiple instances in dev (hot reload)
+	var prisma: PrismaClient | undefined
+}
 
-export default db
+export const db =
+	process.env.NODE_ENV === 'production'
+		? new PrismaClient()
+		: (global.prisma ??
+			new PrismaClient({
+				log: ['query', 'error', 'warn'] // log more in dev
+			}))
+
+if (process.env.NODE_ENV !== 'production') {
+	global.prisma = db
+}
