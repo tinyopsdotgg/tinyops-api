@@ -21,8 +21,6 @@ userRoute.get('/', requireUserSession, (c) => {
 	return c.json({ user: userDto })
 })
 
-// Note: You will always need to add async to the route endpoint since the
-// sessionAuth middleware is also async since it calls to the database
 userRoute.patch('/password', requireUserSession, async (c) => {
 	const user = c.get('user')
 	const body = await c.req.json()
