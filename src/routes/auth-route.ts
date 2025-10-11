@@ -2,7 +2,7 @@ import argon2 from 'argon2'
 import { Hono } from 'hono'
 import { z } from 'zod'
 
-import { db } from '../db/db.js'
+import { db } from '../db/prisma-config.js'
 import { RegisterUserSchema } from '../dto/register-user.dto.js'
 import { requireUserSession } from '../middleware/require-user-session-middleware.js'
 import { AppError } from '../utils/error-handler.js'

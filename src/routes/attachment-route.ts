@@ -2,8 +2,8 @@ import { GetObjectCommand, PutObjectCommand } from '@aws-sdk/client-s3'
 import { Hono } from 'hono'
 import { nanoid } from 'nanoid'
 
-import { db } from '../db/db.js'
-import { s3 } from '../db/s3.js'
+import { db } from '../db/prisma-config.js'
+import { s3 } from '../db/s3-client-config.js'
 import { AppError } from '../utils/error-handler.js'
 import { HTTP_STATUS } from '../utils/http-status.enum.js'
 

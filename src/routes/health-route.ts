@@ -1,6 +1,6 @@
 import { Hono } from 'hono'
 
-import { db } from '../db/db.js'
+import { db } from '../db/prisma-config.js'
 
 export const healthRoute = new Hono().basePath('health')
 

@@ -1,6 +1,6 @@
 import { Hono } from 'hono'
 
-import { db } from '../db/db.js'
+import { db } from '../db/prisma-config.js'
 import { CreateEventSchema } from '../dto/create-event.dto.js'
 import { requireUserSession } from '../middleware/require-user-session-middleware.js'
 import { AppError } from '../utils/error-handler.js'
