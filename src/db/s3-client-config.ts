@@ -7,5 +7,5 @@ export const s3 = new S3Client({
 		accessKeyId: process.env.MINIO_ACCESS_KEY || 'minioadmin',
 		secretAccessKey: process.env.MINIO_SECRET_KEY || 'minioadmin'
 	},
-	forcePathStyle: true // Required for MinIO!
+	forcePathStyle: true // Required for MinIO
 })
